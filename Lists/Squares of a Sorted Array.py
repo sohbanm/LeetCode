@@ -15,11 +15,9 @@ class Solution:
             left,right = nums[l], nums[r]
             print(squares)
             if abs(left) > abs(right):
-                print('l')
                 squares.append(left**2)
                 l+=1
             else:
-                print('r')
                 squares.append(right**2)
                 r-=1
         print(squares[::-1])

@@ -1,3 +1,5 @@
+#I still dont understand this question, its very weird
+
 class Solution:
     def matrixReshape(self, mat: list[list[int]], r: int, c: int) -> list[list[int]]:
         n, m =len(mat[0]), len(mat)
