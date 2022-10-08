@@ -1,13 +1,3 @@
-#Hashmap Method
-class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
-        nums_map={}
-        for i in range(len(nums)):
-            diff = target - nums[i]
-            if diff in nums_map.keys():
-                return [nums_map[diff]+1, i+1]
-            nums_map[nums[i]] = i
-
 #Two Pointers method
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:

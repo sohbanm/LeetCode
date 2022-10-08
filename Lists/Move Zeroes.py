@@ -10,16 +10,5 @@ class Solution:
                 nums[l],nums[r] = nums[r], nums[l]
                 l+=1
 
-        ##Remove and Add
-        # zeros=[]
-        # count=0
-        # while count<len(nums):
-        #     if nums[count] == 0:
-        #         nums.pop(count)
-        #         zeros.append(0)
-        #     else:
-        #         count+=1
-        # nums.extend(zeros)
-
 s1=Solution()
 s1.moveZeroes(nums = [0])

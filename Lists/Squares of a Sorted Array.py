@@ -1,11 +1,3 @@
-# class Solution:
-#     def sortedSquares(self, nums: list[int]) -> list[int]:
-#         squares = []
-#         for i in range(len(nums)):
-#             squares.append(nums[i]**2)
-#         squares.sort()
-#         print(squares)
-
 class Solution:
     def sortedSquares(self, nums: list[int]) -> list[int]:
         l, r = 0, len(nums) -1

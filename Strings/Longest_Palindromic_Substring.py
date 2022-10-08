@@ -1,15 +1,3 @@
-#Brute Force
-# class Solution:
-#     def longestPalindrome(self, s: str) -> str:
-#         palindromes = s[0]
-#         for i in range(len(s)):
-#             for j in range(len(s),i+1,-1):
-#                 sub = s[i:j]
-#                 if sub[::-1] == sub and len(sub)>len(palindromes):
-#                     palindromes = sub
-#         print(palindromes)
-#         return palindromes
-
 #instead of flipping string to check palindrome, checking to see if characters going outwards are the same
 class Solution:
     def longestPalindrome(self, s: str) -> str:
