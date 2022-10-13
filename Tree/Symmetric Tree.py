@@ -4,16 +4,16 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        if not root.left and not root.right:
+        if root is None:
             return True
-        if not root.left or not root.right:
-            return False
-
-        count = 0
-        left = root.left
-        right = root.right
         
+        def isMirror(lRoot, rRoot):
+            if lRoot and rRoot:
+                return (lRoot.val == rRoot.val) and (isMirror(lRoot.left, rRoot.right)) and (isMirror(lRoot.right, rRoot.left))
+            return lRoot == rRoot
 
-        
+        return isMirror(root.left,root.right)
