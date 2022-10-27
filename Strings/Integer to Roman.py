@@ -4,9 +4,11 @@ class Solution:
         romanIndex = [1,4,5,9,10,40,50,90,100,400,500,900,1000]
         out = ''
         index = 12
-        while num:
-            if romanIndex[index]<num:
+        while num and index!=-1:
+            print(romanIndex[index],num)
+            if romanIndex[index]<=num:
                 num-=romanIndex[index]
+                out+=roman[romanIndex[index]]
             else:
                 index-=1
       
