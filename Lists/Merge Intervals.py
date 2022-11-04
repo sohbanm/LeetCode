@@ -16,4 +16,4 @@ class Solution:
 
 
 sol = Solution()
-sol.merge(intervals = [[1,3],[2,6],[8,10],[15,18]])
+print(sol.merge(intervals = [[1,3],[2,6],[8,10],[15,18]]))
