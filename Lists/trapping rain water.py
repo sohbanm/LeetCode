@@ -30,7 +30,7 @@ class Solution:
 
         return total
     
-    
+
 # O(1) space and O(n) time 
 class Solution:
     def trap(self, height: list[int]) -> int:
@@ -56,5 +56,4 @@ class Solution:
         
         return total
 
-print(Solution.trap(height = [0,1,0,2,1,0,1,3,2,1,2,1]))
 
