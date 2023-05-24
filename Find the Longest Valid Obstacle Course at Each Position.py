@@ -1,31 +1,25 @@
 # tried using memoization
-# cannot use first memoized value but the max one
+# cannot use first memoized value but the max one, need to use binary search for this
+# mahdeen solution
 class Solution:
     def longestObstacleCourseAtEachPosition(self, obstacles: list[int]) -> list[int]:
-        checked = [0 for _ in range(len(obstacles))]
+        memo = []
         res = []
 
-        for i in range(len(obstacles)):
-            stuff = obstacles[0:i+1]
-            print(stuff)
-            length = 0
-            temp = float("inf")
-            for j in range(len(stuff) - 1, -1, -1):
-                print(j)
-                print(temp, obstacles[j])
-                if temp >= obstacles[j]:
-                    if checked[j] != 0:
-                        length += checked[j]
-                        break
-                    length += 1
-                    temp = obstacles[j]
-            checked[i] = length
-            print(checked)
-            res.append(length)
+        for obstacle in obstacles:
+            left, right = 0, len(memo) - 1
+            while left <= right:
+                mid = (left + right) // 2
+                if memo[mid] <= obstacle:
+                    left = mid + 1
+                else:
+                    right = mid - 1
+            length = left
 
-        # print(checked)
+            if length == len(memo):
+                memo.append(obstacle)
+            else:
+                memo[length] = obstacle
+            res.append(length + 1)
+
         return res
-    
-sol = Solution()
-print(sol.longestObstacleCourseAtEachPosition(obstacles = [5,1,5,5,1,3,4,5,1,4]))
-# [1,1,2,3,2,3,4,5,3,5]
