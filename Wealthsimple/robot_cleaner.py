@@ -27,13 +27,11 @@ def traverse(grid, x, y):
 
         newX, newY = x + dx, y + dy
 
-        if newX < 0 or newY < 0 or newX > n or newY > m or \
-            grid[newX][newY] == "." or grid[newX][newY] == "-":
-
-            return None, False
-
-        grid[newX][newY] = "-"
-        return (newX, newY), True
+        if 0 < newX <= n and 0 < newY <= m and grid[newX][newY] == "":
+            grid[newX][newY] = "-"
+            return (newX, newY), True
+        
+        return None, False
     
     lastValid = [(x, y)]
     grid[x][y] = "-"

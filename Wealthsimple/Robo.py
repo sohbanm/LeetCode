@@ -1,5 +1,3 @@
-import random
-
 class Robot:
 
     def __init__(self, row, col, room):
@@ -14,11 +12,11 @@ class Robot:
 
     def move(self):
         new_row = self.row + self.directions[self.index][0]
-        new_col = self.col + self.directions[self.index][0]
+        new_col = self.col + self.directions[self.index][1]
 
         if (
             0 <= new_col < self.n and
-            0 <= new_row < self.row and 
+            0 <= new_row < self.m and 
             self.room[new_row][new_col] == 1
             ):
             self.row = new_row
